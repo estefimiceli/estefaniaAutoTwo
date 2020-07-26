@@ -5,8 +5,9 @@
     <classes>
       <class name="myTests.TestSearch">
         <methods>
-          <include name="searchNoresults"/>
+          <include name="searchTshirts"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- myTests.TestSearch -->
     </classes>

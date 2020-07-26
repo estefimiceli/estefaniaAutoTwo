@@ -42,19 +42,8 @@ public class TestSearch {
 		}
 		String expectedBannerText = "\"DRESSES\"";
 		Assert.assertEquals(pItems.getTitleText(), expectedBannerText);
-	}
-	
-	@Test
-	public void searchTshirts() {
-		pIndex.search("T-SHIRTS");
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String expectedBannerText = "\"T-SHIRTS\"";
-		Assert.assertEquals(pItems.getTitleText(), expectedBannerText);
+		String expectedFirstItemText = "Printed Summer Dress";
+		Assert.assertEquals(pItems.getFirstItemText(), expectedFirstItemText);
 	}
 	
 	@Test
@@ -68,6 +57,21 @@ public class TestSearch {
 		}
 		String expectedBannerText = "No results were found for your search \"hello world\"";
 		Assert.assertEquals(pItems.getNotFoundText(), expectedBannerText);
+	}
+	
+	@Test
+	public void searchTshirts() {
+		pIndex.search("T-SHIRTS");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String expectedBannerText = "\"T-SHIRTS\"";
+		Assert.assertEquals(pItems.getTitleText(), expectedBannerText);
+		String expectedFirstItemText = "Faded Short Sleeve T-shirts";
+		Assert.assertEquals(pItems.getFirstItemText(), expectedFirstItemText);
 	}
 	
 }

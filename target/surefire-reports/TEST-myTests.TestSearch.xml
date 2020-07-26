@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="myTests.TestSearch" time="13.706" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="myTests.TestSearch" time="12.569" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14.0.1+7"/>
@@ -54,7 +54,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="myTests.TestSearch" name="search" time="4.19"/>
-  <testcase classname="myTests.TestSearch" name="searchNoresults" time="4.46"/>
-  <testcase classname="myTests.TestSearch" name="searchTshirts" time="5.056"/>
+  <testcase classname="myTests.TestSearch" name="searchDresses" time="4.9"/>
+  <testcase classname="myTests.TestSearch" name="searchNoresults" time="4.264"/>
+  <testcase classname="myTests.TestSearch" name="searchTshirts" time="3.405"/>
 </testsuite>
