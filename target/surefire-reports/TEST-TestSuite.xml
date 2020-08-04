@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="TestSuite" time="6.07" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="TestSuite" time="6.059" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14.0.1+7"/>
@@ -56,11 +56,11 @@
   </properties>
   <testcase classname="myTests.TestAsserts" name="isEqualChar" time="0.011"/>
   <testcase classname="myTests.TestAsserts" name="isEqualNumber" time="0"/>
-  <testcase classname="myTests.TestAsserts" name="isFalse" time="0.001"/>
+  <testcase classname="myTests.TestAsserts" name="isFalse" time="0"/>
   <testcase classname="myTests.TestAsserts" name="isNotEqual" time="0.001"/>
-  <testcase classname="myTests.TestAsserts" name="isNotNull" time="0"/>
-  <testcase classname="myTests.TestAsserts" name="isNull" time="0"/>
-  <testcase classname="myTests.TestAsserts" name="isTrue" time="0.005"/>
-  <testcase classname="myTests.TestSoftAsserts" name="softAsserts" time="0.005"/>
-  <testcase classname="myTests.TestSearch" name="clickOnCheckboxByText" time="6.047"/>
+  <testcase classname="myTests.TestAsserts" name="isNotNull" time="0.001"/>
+  <testcase classname="myTests.TestAsserts" name="isNull" time="0.001"/>
+  <testcase classname="myTests.TestAsserts" name="isTrue" time="0.009"/>
+  <testcase classname="myTests.TestSoftAsserts" name="softAsserts" time="0.006"/>
+  <testcase classname="myTests.TestSearch" name="clickOnCheckboxByText" time="6.03"/>
 </testsuite>

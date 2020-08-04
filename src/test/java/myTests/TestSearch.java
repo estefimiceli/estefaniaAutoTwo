@@ -59,6 +59,8 @@ public class TestSearch extends Common {
 		pIndex.clickDresses();
 	    pItems.clickOnCheckboxByText("Summer Dresses");
 	    Waiters.waitForTime(3);
+	    String expectedSectionText = "SUMMER DRESSES ";
+		Assert.assertEquals(pItems.getSectionText(), expectedSectionText);
 	}
 	
 }

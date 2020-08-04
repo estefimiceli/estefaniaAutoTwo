@@ -14,6 +14,7 @@ public class PageItems {
 	private By firstItemTitle;
 	private By orderSelect;
 	private By checkBoxes;
+	private By sectionTitle;
 	
 	public PageItems(WebDriver driver) {
 		this.driver = driver;
@@ -22,6 +23,7 @@ public class PageItems {
 		firstItemTitle = By.cssSelector("#center_column > ul > li > div > div.right-block > h5 > a");
 		orderSelect = By.id("selectProductSort");
 		checkBoxes = By.className("checkbox");
+		sectionTitle = By.className("cat-name");
 	}
 	
 	public void clickOnFirstCheckbox() {
@@ -48,6 +50,10 @@ public class PageItems {
 	
 	public String getTitleText() {
 		return driver.findElement(titleBanner).getText();
+	}
+	
+	public String getSectionText() {
+		return driver.findElement(sectionTitle).getText();
 	}
 	
 	public String getNotFoundText () {
