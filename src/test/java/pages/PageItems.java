@@ -48,6 +48,10 @@ public class PageItems {
 		driver.findElement(By.linkText(text)).click();
 	}
 	
+	/**
+	 * This method returns the banner's title
+	 * @return (string): the banner's title
+	 */
 	public String getTitleText() {
 		return driver.findElement(titleBanner).getText();
 	}

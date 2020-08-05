@@ -12,6 +12,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -26,20 +28,30 @@ public class Common {
 	protected PageIndex pIndex;
 	protected PageItems pItems;
 	
+	
+	//para ejecutar todos los tests del proyecto: mvn test -e
+	//para ejecutar solo un test file (clase.java): mvn -Dtest=TestSearch test
+	//para ejecutar solo un test del test file o de la clase.java: mvn -Dtest=TestSearch#clickOnCheckboxByText test
+	//para ejecutar tests q empiecen con cierta palabra: mvn -Dtest=TestSearch#click* test
+	//para ejecutar tests de un grupo: mvn -Dgroups=Group2 test
+	
 	//antes de que se ejecute cada test de un test file, se ejecuta esto
-	@BeforeMethod
+	@BeforeMethod(groups={"Group1","Group2"})
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+//		if(System.getProperty("os.name").contains("Mac")) {
+//			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+//		}
+		//System.out.println("EFIII " + System.getProperty("os.name"));
 		//para ejecutar tests de ui en modo headless
 		//modo headless: se levanta el mismo chrome en memoria, pero no es visible. En memoria todo se renderiza pero no lo ves en pantalla
 		//en modo headless los screenshots siguen siendo captados
-		ChromeOptions options = new ChromeOptions();
+//		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
 		//para ejecutar en modo incognito
-		options.addArguments("--incognito");
+//		options.addArguments("--incognito");
 		//reemplaza a driver.manage().window().maximize()
-		options.addArguments("--start-fullscreen");
-		driver = new ChromeDriver(options);
+//		options.addArguments("--start-fullscreen");
+//		driver = new ChromeDriver(options);
 		//driver.manage().window().maximize();
 		// Set browser's window size
 		//driver.manage().window().setSize(new Dimension(400, 500));
@@ -51,6 +63,13 @@ public class Common {
 //			}
 //				
 //		}
+		
+		System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
+		FirefoxOptions fo = new FirefoxOptions();
+		fo.addArguments("--start-maximized");
+		fo.addArguments("--incognito");
+		driver = new FirefoxDriver(fo);
+		//driver.manage().window().maximize();
 		driver.navigate().to("http://automationpractice.com/index.php");
 		pIndex = new PageIndex(driver);
 		pItems = new PageItems(driver);
@@ -58,7 +77,7 @@ public class Common {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
-	@AfterMethod
+	@AfterMethod(groups={"Group1","Group2"})
 	public void tearDown(ITestResult result) {
 		// los reportes estan dentro del proyecto, en target, surefire reports: index.html and emaibable-report.html 
 		//getStatus returns 1 if passes and another number if fails
@@ -84,18 +103,18 @@ public class Common {
 			}
 		}
 		
-		driver.close();
+		//driver.close();
 		driver.quit();
 	}
 	
 	//antes de que se ejecute cada clase (cada test file) se ejecuta esto
-	@BeforeClass
+	@BeforeClass(groups={"Group1","Group2"})
 	public void beforeAll() {
 		System.out.println("creando la base de datos ...\n");
 		System.out.println("base de datos creada ...\n");
 	}
 
-	@AfterClass
+	@AfterClass(groups={"Group1","Group2"})
 	public void afterAll() {
 		System.out.println("borrando base de datos ...\n");
 		System.out.println("base de datos borrada ...\n");
